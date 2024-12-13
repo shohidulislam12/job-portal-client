@@ -18,7 +18,7 @@ const Jobcard = ({job}) => {
             <p>Skills</p>
 <div className=" flex items-center flex-row flex-wrap gap-2 ">
 {
-    requirements.map(sk=><p className="border rounded-md p-2 hover:text-blue-600 hover:bg-slate-400 ">{sk}</p>)
+    requirements?.map((sk,index)=><p key={index} className="border rounded-md p-2 hover:text-blue-600 hover:bg-slate-400 ">{sk}</p>)
 }
 </div>
           </div>

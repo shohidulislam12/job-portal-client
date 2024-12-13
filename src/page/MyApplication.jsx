@@ -6,17 +6,7 @@ import { div } from "motion/react-client";
 const MyApplication = () => {
     const {user}=useauth()
     const [jobs,setjobs]=useState([])
-    // {
-    //     "_id": "675ad356c5e52b3d939eb94b",
-    //     "jobid": "675aa71709ae0e0dcd00fc4e",
-    //     "applicant_email": "shohidulislamsifat2003@gmail.com",
-    //     "github": "https://github.com/shohidulislam12",
-    //     "linkdIn": "http://localhost:5173/jobapply/675aa71709ae0e0dcd00fc4e",
-    //     "resume": "http://localhost:5173/jobapply/675aa71709ae0e0dcd00fc4e",
-    //     "title": "Marketing Specialist",
-    //     "company": "GoatMark Inc",
-    //     "company_logo": "https://i.ibb.co/TvvzXfq/google.png"
-    // },
+
     useEffect(()=>{
  fetch(`http://localhost:3000/job-application?email=${user?.email}`)
  .then(res=>res.json())

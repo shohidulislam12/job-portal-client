@@ -2,8 +2,9 @@ import Lottie from "lottie-react";
 import  registarLotiData from '../assets/lotie/registar.json'
 import { useContext } from "react";
 import AuthContext from "../Context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Registar = () => {
+  const  navigate=useNavigate()
     const {creatuser}=useContext(AuthContext)
     const handlesubmit=(e)=>{
         e.preventDefault()
@@ -16,6 +17,7 @@ const Registar = () => {
           
             const user = userCredential.user;
             console.log(user)
+            navigate('/')
           })
           .catch((error) => {
             const errorCode = error.code;

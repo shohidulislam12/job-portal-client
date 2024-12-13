@@ -10,6 +10,8 @@ const Navbar = () => {
     <li><NavLink to='/'>AboutME</NavLink></li>
     <li><NavLink to='/'> My Portfolio</NavLink></li>
     <li><NavLink to='/myapplication'> My Application </NavLink></li>
+    <li><NavLink to='/addjob'>Add Job</NavLink></li>
+    <li><NavLink to='/myposted'>My Posted Job</NavLink></li>
     </>
     const handlesignOut=()=>{
         signOut(auth).then(() => {

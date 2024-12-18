@@ -1,23 +1,36 @@
 import { useEffect, useState } from "react";
 import useauth from "../Context/hooks/useauth";
 import { div } from "motion/react-client";
+import axios from "axios";
+import useAxios from "./home/useAxios";
 
 
 const MyApplication = () => {
     const {user}=useauth()
     const [jobs,setjobs]=useState([])
+    const axiousSecure=useAxios()
 
     useEffect(()=>{
- fetch(`http://localhost:3000/job-application?email=${user?.email}`)
- .then(res=>res.json())
- .then(data=>setjobs(data))
+//  fetch(`https://job-portal-server-alpha-two.vercel.app/job-application?email=${user?.email}`)
+//  .then(res=>res.json())
+//  .then(data=>setjobs(data))
+
+// axios.get(`https://job-portal-server-alpha-two.vercel.app/job-application?email=${user?.email}`,{withCredentials:true})
+// .then(res=>setjobs(res.data))
+ 
+axiousSecure.get(`/job-application?email=${user?.email}`)
+.then(res=>setjobs(res.data))
+
+
+
+
     },[user.email])
     console.log(jobs)
 
 
 const handledelete=(id)=>{
     console.log('delete',id)
-    fetch(`http://localhost:3000/job-application/${id}`,
+    fetch(`https://job-portal-server-alpha-two.vercel.app/job-application/${id}`,
         {
             method:"delete"
         })

@@ -4,6 +4,7 @@ import { useContext } from "react";
 import AuthContext from "../Context/AuthContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../firebase/firebase.init";
+import axios from "axios";
 const SignIn = () => {
     const {signinuser,googlelogin}=useContext(AuthContext)
     const location=useLocation()
@@ -19,9 +20,11 @@ const SignIn = () => {
         signinuser(email,password)
         .then((userCredential) => {
           
-            const user = userCredential.user;
-            console.log("user sign in ",user)
+            const user={email:email}
+          axios.post('https://job-portal-server-alpha-two.vercel.app/jwt',user,{withCredentials:true})
+           .then(res=>console.log(res.data))
             useNavigate(form)
+           console.log(userCredential)
           })
           .catch((error) => {
             const errorCode = error.code;

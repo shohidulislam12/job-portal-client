@@ -31,7 +31,8 @@ const Addjob = () => {
         const post={
             title,location,jobType,category,  applicationDeadline,salaryRange,hr_name,hr_email,responsiblity1,company,description,company_logo
         }
-        fetch('http://localhost:3000/jobs',{
+        
+        fetch('https://job-portal-server-alpha-two.vercel.app/jobs',{
         method:"POST",
         headers:{
             'content-type':'application/json'

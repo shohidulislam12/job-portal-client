@@ -6,7 +6,7 @@ const MyPostedJob = () => {
     const {user}=useauth()
     const [jobs,setJobs]=useState([])
     useEffect(()=>{
-fetch(`http://localhost:3000/my_jobs?email=${user.email}`)
+fetch(`https://job-portal-server-alpha-two.vercel.app/my_jobs?email=${user.email}`)
 .then(res=>res.json())
 .then(data=>{
     console.log(data)
@@ -18,7 +18,7 @@ fetch(`http://localhost:3000/my_jobs?email=${user.email}`)
 
     const handledelete=(id)=>{
         console.log('delete',id)
-        fetch(`http://localhost:3000/jobs/${id}`,
+        fetch(`https://job-portal-server-alpha-two.vercel.app/jobs/${id}`,
             {
                 method:"delete"
             })

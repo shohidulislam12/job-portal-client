@@ -7,7 +7,7 @@ const handlestatusupdate=(e,id)=>{
  const data={
     status:e.target.value
  }
- fetch(`http://localhost:3000/job-application/jobs/${id}`,{
+ fetch(`https://job-portal-server-alpha-two.vercel.app/job-application/jobs/${id}`,{
     method:"PATCH",
 
     headers:{

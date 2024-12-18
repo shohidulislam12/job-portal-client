@@ -6,7 +6,7 @@ const Jobscollection = () => {
     const {user}=useauth()
     const [jobs,setJobs]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:3000/jobs')
+        fetch('https://job-portal-server-alpha-two.vercel.app/jobs')
         .then(res=>res.json())
         .then(data=>{
             setJobs(data)

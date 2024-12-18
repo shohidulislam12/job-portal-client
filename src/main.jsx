@@ -52,13 +52,13 @@ const router = createBrowserRouter([
   {
     path:'/jobs/:id',
     element:<PrivetRoute><JobDetails></JobDetails></PrivetRoute>,
-    loader: ({params})=>fetch(`http://localhost:3000/jobs/${params.id}`)
+    loader: ({params})=>fetch(`https://job-portal-server-alpha-two.vercel.app/jobs/${params.id}`)
   
   },
   {
     path:'/jobapply/:id',
     element:<PrivetRoute><ApplyJob></ApplyJob></PrivetRoute>,
-    loader: ({params})=>fetch(`http://localhost:3000/jobs/${params.id}`)
+    loader: ({params})=>fetch(`https://job-portal-server-alpha-two.vercel.app/jobs/${params.id}`)
   
   },
   {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
   {
     path:'viewapplication/:id',
     element:<PrivetRoute><ViewApplications></ViewApplications></PrivetRoute>,
-    loader:({params})=>fetch(`http://localhost:3000/job-application/jobs/${params.id}`)
+    loader:({params})=>fetch(`https://job-portal-server-alpha-two.vercel.app/job-application/jobs/${params.id}`)
    
   
   }

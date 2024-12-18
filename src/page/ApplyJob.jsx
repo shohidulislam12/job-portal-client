@@ -22,7 +22,7 @@ const ApplyJob = () => {
         applicant_email:user.email,
         github,linkdIn,resume
        }
-      fetch('http://localhost:3000/job-application',{
+      fetch('https://job-portal-server-alpha-two.vercel.app/job-application',{
    method:"POST",
    headers:{
     'content-type':'application/json'
